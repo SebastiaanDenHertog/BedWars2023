@@ -80,12 +80,15 @@ public class PAPISupport extends PlaceholderExpansion {
         /* Non-Player required placeholders */
 
         if (s.startsWith("arena_status_")) {
-            IArena a = Arena.getArenaByName(s.replace("arena_status_", ""));
-            if (a == null) {
-                return player == null ? Language.getDefaultLanguage().m(Messages.ARENA_STATUS_RESTARTING_NAME) :
-                        Language.getMsg(player, Messages.ARENA_STATUS_RESTARTING_NAME);
-            }
-            return a.getDisplayStatus(Language.getDefaultLanguage());
+            String split = s.replace("arena_status_", "");
+            if (!split.equalsIgnoreCase("plocale") && !split.equalsIgnoreCase("unformatted")) {
+                IArena a = Arena.getArenaByName(s.replace("arena_status_", ""));
+                if (a == null) {
+                    return player == null ? Language.getDefaultLanguage().m(Messages.ARENA_STATUS_RESTARTING_NAME) :
+                            Language.getMsg(player, Messages.ARENA_STATUS_RESTARTING_NAME);
+                }
+                return a.getDisplayStatus(Language.getDefaultLanguage());
+            };
         }
 
         if (s.startsWith("arena_count_")) {
