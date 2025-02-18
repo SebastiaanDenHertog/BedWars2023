@@ -2754,7 +2754,7 @@ public class Arena implements IArena {
             return;
         }
         String dragonPlaceholderName = "%bw_"+team.getArena().getWorldName()+"_"+team.getName() + "+" + dragonNumber + "%";
-        ServerPlaceholder dragonPlaceholder = TabAPI.getInstance().getPlaceholderManager().registerServerPlaceholder(dragonPlaceholderName, 500,  () -> team.getDragons().get(dragonNumber).getHealth()/team.getDragons().get(dragonNumber).getMaxHealth()*100);
+        ServerPlaceholder dragonPlaceholder = TabAPI.getInstance().getPlaceholderManager().registerServerPlaceholder(dragonPlaceholderName, 500,  () -> String.valueOf(team.getDragons().get(dragonNumber).getHealth()/team.getDragons().get(dragonNumber).getMaxHealth()*100));
         serverPlaceholders.add(dragonPlaceholder);
         for (Player player : team.getArena().getPlayers()){
             String name = Language.getMsg(player, Messages.FORMATTING_BOSSBAR_DRAGON).replace("%bw_team%", team.getColor().chat()+team.getName()).replace("%bw_team_color%", String.valueOf(team.getColor().chat())).replace("%bw_team_name%", team.getDisplayName(getPlayerLanguage(player))).replace("%bw_team_letter%", String.valueOf(team.getName().length() != 0 ? team.getName().charAt(0) : ""));

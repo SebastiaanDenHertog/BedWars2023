@@ -180,42 +180,42 @@ public class BoardManager implements IScoreboardService {
         placeholderManager.registerPlayerPlaceholder("%bw_v_suffix%", placeholderRefresh, player -> BedWars.getChatSupport().getSuffix((Player) player.getPlayer()));
         placeholderManager.registerPlayerPlaceholder("%bw_playername%", placeholderRefresh, TabPlayer::getName);
         placeholderManager.registerPlayerPlaceholder("%bw_player%", placeholderRefresh, player -> ((Player) player.getPlayer()).getDisplayName());
-        placeholderManager.registerPlayerPlaceholder("%bw_money%", placeholderRefresh, player -> BedWars.getEconomy().getMoney((Player) player.getPlayer()));
+        placeholderManager.registerPlayerPlaceholder("%bw_money%", placeholderRefresh, player -> String.valueOf(BedWars.getEconomy().getMoney((Player) player.getPlayer())));
         placeholderManager.registerServerPlaceholder("%bw_server_ip%", placeholderRefresh, () -> BedWars.config.getString(ConfigPath.GENERAL_CONFIG_PLACEHOLDERS_REPLACEMENTS_SERVER_IP));
         placeholderManager.registerServerPlaceholder("%bw_version%", placeholderRefresh, () -> BedWars.plugin.getDescription().getVersion());
         placeholderManager.registerServerPlaceholder("%bw_server_id%", placeholderRefresh, () -> BedWars.config.getString(ConfigPath.GENERAL_CONFIGURATION_BUNGEE_OPTION_SERVER_ID));
         placeholderManager.registerPlayerPlaceholder("%bw_date%", placeholderRefresh, player -> getDateFormat((Player) player.getPlayer()).format(new Date(System.currentTimeMillis())));
         placeholderManager.registerPlayerPlaceholder("%bw_progress%", placeholderRefresh, player -> PlayerLevel.getLevelByPlayer(player.getUniqueId()).getProgress());
         placeholderManager.registerPlayerPlaceholder("%bw_level%", placeholderRefresh, player -> PlayerLevel.getLevelByPlayer(player.getUniqueId()).getLevelName());
-        placeholderManager.registerPlayerPlaceholder("%bw_level_unformatted%", placeholderRefresh, player -> PlayerLevel.getLevelByPlayer(player.getUniqueId()).getLevel());
+        placeholderManager.registerPlayerPlaceholder("%bw_level_unformatted%", placeholderRefresh, player -> String.valueOf(PlayerLevel.getLevelByPlayer(player.getUniqueId()).getLevel()));
         placeholderManager.registerPlayerPlaceholder("%bw_current_xp%", placeholderRefresh, player -> PlayerLevel.getLevelByPlayer(player.getUniqueId()).getFormattedCurrentXp());
         placeholderManager.registerPlayerPlaceholder("%bw_required_xp%", placeholderRefresh, player -> PlayerLevel.getLevelByPlayer(player.getUniqueId()).getFormattedRequiredXp());
         placeholderManager.registerPlayerPlaceholder("%bw_map%", placeholderRefresh, player -> Arena.getArenaByPlayer((Player) player.getPlayer()) == null ? "" : Arena.getArenaByPlayer((Player) player.getPlayer()).getDisplayName());
         placeholderManager.registerPlayerPlaceholder("%bw_map_name%", placeholderRefresh, player -> Arena.getArenaByPlayer((Player) player.getPlayer()) == null ? "" : Arena.getArenaByPlayer((Player) player.getPlayer()).getArenaName());
         placeholderManager.registerPlayerPlaceholder("%bw_group%", placeholderRefresh, player -> Arena.getArenaByPlayer((Player) player.getPlayer()) == null ? "" : Arena.getArenaByPlayer((Player) player.getPlayer()).getDisplayGroup((Player) player.getPlayer()));
         placeholderManager.registerPlayerPlaceholder("%bw_kills%", placeholderRefresh, player -> {
-            if (null != Arena.getArenaByPlayer((Player) player.getPlayer())) return Arena.getArenaByPlayer((Player) player.getPlayer()).getPlayerKills((Player) player.getPlayer(), false);
-            return BedWars.getStatsManager().get(player.getUniqueId()).getKills();
+            if (null != Arena.getArenaByPlayer((Player) player.getPlayer())) return String.valueOf(Arena.getArenaByPlayer((Player) player.getPlayer()).getPlayerKills((Player) player.getPlayer(), false));
+            return String.valueOf(BedWars.getStatsManager().get(player.getUniqueId()).getKills());
         });
         placeholderManager.registerPlayerPlaceholder("%bw_final_kills%", placeholderRefresh, player -> {
-            if (null != Arena.getArenaByPlayer((Player) player.getPlayer())) return Arena.getArenaByPlayer((Player) player.getPlayer()).getPlayerKills((Player) player.getPlayer(), true);
-            return BedWars.getStatsManager().get(player.getUniqueId()).getKills();
+            if (null != Arena.getArenaByPlayer((Player) player.getPlayer())) return String.valueOf(Arena.getArenaByPlayer((Player) player.getPlayer()).getPlayerKills((Player) player.getPlayer(), true));
+            return String.valueOf(BedWars.getStatsManager().get(player.getUniqueId()).getKills());
         });
         placeholderManager.registerPlayerPlaceholder("%bw_beds%", placeholderRefresh, player -> {
-            if (null != Arena.getArenaByPlayer((Player) player.getPlayer())) return Arena.getArenaByPlayer((Player) player.getPlayer()).getPlayerBedsDestroyed((Player) player.getPlayer());
-            return BedWars.getStatsManager().get(player.getUniqueId()).getBedsDestroyed();
+            if (null != Arena.getArenaByPlayer((Player) player.getPlayer())) return String.valueOf(Arena.getArenaByPlayer((Player) player.getPlayer()).getPlayerBedsDestroyed((Player) player.getPlayer()));
+            return String.valueOf(BedWars.getStatsManager().get(player.getUniqueId()).getBedsDestroyed());
         });
         placeholderManager.registerPlayerPlaceholder("%bw_deaths%", placeholderRefresh, player -> {
-            if (null != Arena.getArenaByPlayer((Player) player.getPlayer())) return Arena.getArenaByPlayer((Player) player.getPlayer()).getPlayerDeaths((Player) player.getPlayer(), false);
-            return BedWars.getStatsManager().get(player.getUniqueId()).getDeaths();
+            if (null != Arena.getArenaByPlayer((Player) player.getPlayer())) return String.valueOf(Arena.getArenaByPlayer((Player) player.getPlayer()).getPlayerDeaths((Player) player.getPlayer(), false));
+            return String.valueOf(BedWars.getStatsManager().get(player.getUniqueId()).getDeaths());
         });
-        placeholderManager.registerPlayerPlaceholder("%bw_final_deaths%", placeholderRefresh, player -> BedWars.getStatsManager().get(player.getUniqueId()).getFinalDeaths());
-        placeholderManager.registerPlayerPlaceholder("%bw_wins%", placeholderRefresh, player -> BedWars.getStatsManager().get(player.getUniqueId()).getWins());
-        placeholderManager.registerPlayerPlaceholder("%bw_losses%", placeholderRefresh, player -> BedWars.getStatsManager().get(player.getUniqueId()).getLosses());
-        placeholderManager.registerPlayerPlaceholder("%bw_games_played%", placeholderRefresh, player -> BedWars.getStatsManager().get(player.getUniqueId()).getGamesPlayed());
+        placeholderManager.registerPlayerPlaceholder("%bw_final_deaths%", placeholderRefresh, player -> String.valueOf(BedWars.getStatsManager().get(player.getUniqueId()).getFinalDeaths()));
+        placeholderManager.registerPlayerPlaceholder("%bw_wins%", placeholderRefresh, player -> String.valueOf(BedWars.getStatsManager().get(player.getUniqueId()).getWins()));
+        placeholderManager.registerPlayerPlaceholder("%bw_losses%", placeholderRefresh, player -> String.valueOf(BedWars.getStatsManager().get(player.getUniqueId()).getLosses()));
+        placeholderManager.registerPlayerPlaceholder("%bw_games_played%", placeholderRefresh, player -> String.valueOf(BedWars.getStatsManager().get(player.getUniqueId()).getGamesPlayed()));
         placeholderManager.registerPlayerPlaceholder("%bw_next_event%", placeholderRefresh, player -> getNextEventName((Player) player.getPlayer()));
-        placeholderManager.registerPlayerPlaceholder("%bw_on%", placeholderRefresh, player -> getOnlinePlayers((Player) player.getPlayer()));
-        placeholderManager.registerPlayerPlaceholder("%bw_max%", placeholderRefresh, player -> Arena.getArenaByPlayer((Player) player.getPlayer()) == null ? "" : Arena.getArenaByPlayer((Player) player.getPlayer()).getMaxPlayers());
+        placeholderManager.registerPlayerPlaceholder("%bw_on%", placeholderRefresh, player -> String.valueOf(getOnlinePlayers((Player) player.getPlayer())));
+        placeholderManager.registerPlayerPlaceholder("%bw_max%", placeholderRefresh, player -> Arena.getArenaByPlayer((Player) player.getPlayer()) == null ? "" : String.valueOf(Arena.getArenaByPlayer((Player) player.getPlayer()).getMaxPlayers()));
         placeholderManager.registerPlayerPlaceholder("%bw_time%", placeholderRefresh, tabPlayer -> {
             Player player = (Player) tabPlayer.getPlayer();
             Arena arena = (Arena) Arena.getArenaByPlayer(player);
@@ -224,7 +224,7 @@ public class BoardManager implements IScoreboardService {
                 return getNextEventTime(arena, player);
             } else if (arena.getStatus() == GameState.starting) {
                 if (arena.getStartingTask() != null) {
-                    return arena.getStartingTask().getCountdown()+1;
+                    return String.valueOf(arena.getStartingTask().getCountdown()+1);
                 }
             }
             return getNextEventDateFormat(player).format(new Date(System.currentTimeMillis()));
@@ -243,7 +243,7 @@ public class BoardManager implements IScoreboardService {
         placeholderManager.registerPlayerPlaceholder("%bw_team_color%", placeholderRefresh, tabPlayer -> {
             Player player = (Player) tabPlayer.getPlayer();
             IArena arena = Arena.getArenaByPlayer(player);
-            return null == arena ? "" : null == arena.getTeam(player) ? ""  : arena.getTeam(player).getColor().chat();
+            return null == arena ? "" : null == arena.getTeam(player) ? ""  : String.valueOf(arena.getTeam(player).getColor().chat());
         });
 
         placeholderManager.registerPlayerPlaceholder("%bw_prefix%", PrefixRefresh, this::getPrefix);
