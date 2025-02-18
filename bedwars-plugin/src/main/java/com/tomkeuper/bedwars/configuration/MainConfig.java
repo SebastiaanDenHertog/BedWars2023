@@ -62,9 +62,7 @@ public class MainConfig extends ConfigManager {
         yml.addDefault(ConfigPath.GENERAL_CONFIGURATION_ALLOW_PARTIES, true);
         yml.addDefault(ConfigPath.GENERAL_ALESSIODP_PARTIES_RANK, 10);
         //
-        yml.addDefault(ConfigPath.SB_CONFIG_SIDEBAR_TAB_NAME, "%bw_playername%");
-        yml.addDefault(ConfigPath.SB_CONFIG_SIDEBAR_ABOVEHEAD_NAME_ENABLED, false);
-        yml.addDefault(ConfigPath.SB_CONFIG_SIDEBAR_ABOVEHEAD_NAME, "%bw_player%");
+        yml.addDefault(ConfigPath.SB_CONFIG_SIDEBAR_PLAYER_NAME, "%bw_playername%");
         yml.addDefault(ConfigPath.SB_CONFIG_SIDEBAR_NAME_FORMATTING_ENABLED, true);
         yml.addDefault(ConfigPath.SB_CONFIG_SIDEBAR_USE_LOBBY_SIDEBAR, true);
         yml.addDefault(ConfigPath.SB_CONFIG_SIDEBAR_USE_GAME_SIDEBAR, true);

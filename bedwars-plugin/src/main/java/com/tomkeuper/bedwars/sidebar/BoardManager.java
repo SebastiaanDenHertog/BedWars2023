@@ -365,15 +365,7 @@ public class BoardManager implements IScoreboardService {
             nameTagManager.setPrefix(tabPlayer, "%bw_prefix%");
             nameTagManager.setSuffix(tabPlayer, "%bw_suffix%");
 
-            tabListFormatManager.setName(tabPlayer,BedWars.config.getString(ConfigPath.SB_CONFIG_SIDEBAR_TAB_NAME));
-            if (BedWars.config.getBoolean(ConfigPath.SB_CONFIG_SIDEBAR_ABOVEHEAD_NAME_ENABLED)) {
-//                    if (TabAPI.getInstance().getNameTagManager() instanceof UnlimitedNameTagManager) {
-//                        UnlimitedNameTagManager nameTagManager = (UnlimitedNameTagManager) TabAPI.getInstance().getNameTagManager();
-//                        nameTagManager.setName(tabPlayer, BedWars.config.getString(ConfigPath.SB_CONFIG_SIDEBAR_ABOVEHEAD_NAME));
-//                    } else {
-                    if (nameTagManager != null) nameTagManager.setSuffix(tabPlayer, "TEST");
-//                    }
-            }
+            tabListFormatManager.setName(tabPlayer,BedWars.config.getString(ConfigPath.SB_CONFIG_SIDEBAR_PLAYER_NAME));
 
         }, delay ? 5 : 0);
     }
