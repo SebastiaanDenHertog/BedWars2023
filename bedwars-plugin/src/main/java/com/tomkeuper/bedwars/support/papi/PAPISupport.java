@@ -274,6 +274,8 @@ public class PAPISupport extends PlaceholderExpansion {
                 return (arena != null) ? arena.getDisplayStatus(lang) : "";
             case "arena_status":
                 return (arena != null) ? arena.getDisplayStatus(BedWars.getAPI().getDefaultLang()) : "";
+            case "arena_status_unformatted":
+                return (arena != null) ? arena.getStatus().toString() : "";
         }
         
         // inside arena stats placeholders
