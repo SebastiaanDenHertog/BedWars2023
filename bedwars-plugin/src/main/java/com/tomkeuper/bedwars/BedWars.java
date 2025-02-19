@@ -637,8 +637,16 @@ public class BedWars extends JavaPlugin {
                     loadArenasAndSigns();
 
                 } else {
-                    this.getLogger().severe("Tab scoreboard is not enabled! please enable this in the tab configuration file!");
-                    Bukkit.getPluginManager().disablePlugin(this);
+                    this.getLogger().severe("Tab scoreboard is not enabled! Applying tab configuration automatically...");
+
+                    // Execute the command programmatically
+                    Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "bw applyTabConfig");
+                    getLogger().info("TAB configuration command has been executed.");
+
+                    this.getLogger().warning("\n\nRestarting the server to apply the changes...\n\n");
+                    Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "restart");
+
+
                 }
             } else {
                 this.getLogger().severe("TAB by NEZNAMY could not be hooked!");
