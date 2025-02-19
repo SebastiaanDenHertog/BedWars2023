@@ -987,7 +987,7 @@ public class BedWars extends JavaPlugin {
 
 
     private boolean checkTABVersion(String version) {
-        String targetVersion = "4.0.2";
+        String targetVersion = "5.0.0";
 
         String[] currentParts = version.split("\\.");
         String[] targetParts = targetVersion.split("\\.");
