@@ -111,6 +111,16 @@ bukkit {
 tasks.compileJava {
     options.release.set(11)
 }
+
+tasks.processResources {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE // Prevents duplicate file errors
+
+    from("src/main/resources") {
+        include("**/*.yml") // Ensures YAML files are copied
+    }
+}
+
+
 val versions = setOf(
     projects.versionsupportCommon,
     projects.versionsupport18R3,
