@@ -32,7 +32,7 @@ scoreboard-teams:
   invisible-nametags: false
   anti-override: true
   sorting-types:
-  - GROUPS:owner,admin,mod,helper,builder,vip,default
+  - GROUPS:owner,admin,mod,helper,builder,vip,red,blue,green,yellow,aqua,white,pink,gray,none,default
   - PLACEHOLDER_A_TO_Z:%bw_team%
   case-sensitive-sorting: true
   can-see-friendly-invisibles: false
