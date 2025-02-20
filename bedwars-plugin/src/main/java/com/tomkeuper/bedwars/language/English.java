@@ -261,8 +261,8 @@ public class English extends Language {
         yml.addDefault(Messages.PLAYER_DIE_PVP_FINAL_KILL, "%bw_player_color%%bw_player% &7was killed by %bw_killer_color%%bw_killer_name%&7. &b&lFINAL KILL!");
         yml.addDefault(Messages.PLAYER_DIE_UNKNOWN_REASON_REGULAR, "%bw_player_color%%bw_player% &7died.");
         yml.addDefault(Messages.PLAYER_DIE_UNKNOWN_REASON_FINAL_KILL, "%bw_player_color%%bw_player% &7died. &b&lFINAL KILL!");
-        yml.addDefault(Messages.PLAYER_DIE_SHOOT_REGULAR, "%bw_player_color%%bw_player% &7was shoot by %bw_killer_color%%bw_killer_name%&7!");
-        yml.addDefault(Messages.PLAYER_DIE_SHOOT_FINAL_KILL, "%bw_player_color%%bw_player% &7was shoot by %bw_killer_color%%bw_killer_name%&7! &b&lFINAL KILL!");
+        yml.addDefault(Messages.PLAYER_DIE_SHOOT_REGULAR, "%bw_player_color%%bw_player% &7was shot by %bw_killer_color%%bw_killer_name%&7!");
+        yml.addDefault(Messages.PLAYER_DIE_SHOOT_FINAL_KILL, "%bw_player_color%%bw_player% &7was shot by %bw_killer_color%%bw_killer_name%&7! &b&lFINAL KILL!");
         yml.addDefault(Messages.PLAYER_DIE_DEBUG_REGULAR, "%bw_player_color%%bw_player% &7was killed by %bw_killer_color%%bw_killer_team_name%'s &7BedBug!");
         yml.addDefault(Messages.PLAYER_DIE_DEBUG_FINAL_KILL, "%bw_player_color%%bw_player% &7was killed by %bw_killer_color%%bw_killer_team_name%'s &7BedBug! &b&lFINAL KILL!");
         yml.addDefault(Messages.PLAYER_DIE_IRON_GOLEM_REGULAR, "%bw_player_color%%bw_player% &7was killed by %bw_killer_color%%bw_killer_team_name%'s &7Iron Golem!");
