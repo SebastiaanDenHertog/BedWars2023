@@ -6,22 +6,22 @@ header-footer:
   per-world:
     world1:
       header:
-      - an example of world with custom
+        - an example of world with custom
       footer:
-      - header/footer and prefix/suffix
+        - header/footer and prefix/suffix
     world2;world3:
       header:
-      - This is a shared header for
-      - world2 and world3
+        - This is a shared header for
+        - world2 and world3
   per-server:
     server1:
       header:
-      - an example of server with custom header
+        - an example of server with custom header
 playerlist-objective:
   enabled: true
-  value: '%ping%'
-  fancy-value: '&7Ping: %ping%'
-  disable-condition: '%world%=disabledworld'
+  value: '0%health%'
+  fancy-value: '&e%health% HP'
+  disable-condition: '%bw_arena_status%!=playing'
 tablist-name-formatting:
   enabled: true
   anti-override: true
@@ -32,8 +32,8 @@ scoreboard-teams:
   invisible-nametags: false
   anti-override: true
   sorting-types:
-  - GROUPS:owner,admin,mod,helper,builder,vip,red,blue,green,yellow,aqua,white,pink,gray,none,default
-  - PLACEHOLDER_A_TO_Z:%bw_team%
+    - GROUPS:owner,admin,mod,helper,builder,vip,red,blue,green,yellow,aqua,white,pink,gray,none,default
+    - PLACEHOLDER_A_TO_Z:%bw_team%
   case-sensitive-sorting: true
   can-see-friendly-invisibles: false
   disable-condition: '%world%=disabledworld'
@@ -71,31 +71,31 @@ layout:
   layouts:
     default:
       fixed-slots:
-      - '1|&3Website&f:'
-      - 2|&bmyserver.net
-      - '3|&8&m                       '
-      - '4|&3Name&f:'
-      - 5|&b%player%
-      - '7|&3Rank&f:'
-      - '8|Rank: %group%'
-      - '10|&3World&f:'
-      - 11|&b%world%
-      - '13|&3Time&f:'
-      - 14|&b%time%
-      - '21|&3Teamspeak&f:'
-      - 22|&bts.myserver.net
-      - '23|&8&m                       '
-      - '41|&3Store&f:'
-      - 42|&bshop.myserver.net
-      - '43|&8&m                       '
+        - '1|&3Website&f:'
+        - 2|&bmyserver.net
+        - '3|&8&m                       '
+        - '4|&3Name&f:'
+        - 5|&b%player%
+        - '7|&3Rank&f:'
+        - '8|Rank: %group%'
+        - '10|&3World&f:'
+        - 11|&b%world%
+        - '13|&3Time&f:'
+        - 14|&b%time%
+        - '21|&3Teamspeak&f:'
+        - 22|&bts.myserver.net
+        - '23|&8&m                       '
+        - '41|&3Store&f:'
+        - 42|&bshop.myserver.net
+        - '43|&8&m                       '
       groups:
         staff:
           condition: permission:tab.staff
           slots:
-          - 24-40
+           - 24-40
         players:
           slots:
-          - 44-80
+            - 44-80
 ping-spoof:
   enabled: false
   value: 0
@@ -111,7 +111,7 @@ placeholder-output-replacements:
 conditions:
   nick:
     conditions:
-    - '%player%=%essentials_nickname%'
+      - '%player%=%essentials_nickname%'
     true: '%player%'
     false: ~%essentials_nickname%
 placeholderapi-refresh-intervals:
@@ -125,11 +125,11 @@ placeholderapi-refresh-intervals:
   '%rel_factionsuuid_relation_color%': 1000
 assign-groups-by-permissions: false
 primary-group-finding-list:
-- Owner
-- Admin
-- Mod
-- Helper
-- default
+  - Owner
+  - Admin
+  - Mod
+  - Helper
+  - default
 permission-refresh-interval: 1000
 debug: false
 mysql:
@@ -144,15 +144,15 @@ per-world-playerlist:
   enabled: false
   allow-bypass-permission: false
   ignore-effect-in-worlds:
-  - ignoredworld
-  - build
+    - ignoredworld
+    - build
   shared-playerlist-world-groups:
     lobby:
-    - lobby1
-    - lobby2
+      - lobby1
+      - lobby2
     minigames:
-    - paintball
-    - bedwars
+      - paintball
+      - bedwars
 compensate-for-packetevents-bug: false
 global-playerlist:
   enabled: false
@@ -160,15 +160,15 @@ global-playerlist:
   display-vanished-players-as-spectators: true
   isolate-unlisted-servers: false
   spy-servers:
-  - spyserver1
-  - spyserver2
+    - spyserver1
+    - spyserver2
   server-groups:
     lobbies:
-    - lobby1
-    - lobby2
+      - lobby1
+      - lobby2
     group2:
-    - server1
-    - server2
+      - server1
+      - server2
   update-latency: false
 use-bukkit-permissions-manager: false
 use-online-uuid-in-tablist: true
